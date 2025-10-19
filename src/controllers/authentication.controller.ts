@@ -205,10 +205,12 @@ class AutenticationController {
         throw createError(400, "password is required");
       }
 
+      const passwordHash = await this.hashingService.hash(password);
+
       const user = await this.userService.update(
         { email: email as string },
         {
-          password,
+          password: passwordHash,
         },
       );
 

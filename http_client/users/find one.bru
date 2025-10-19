@@ -1,0 +1,17 @@
+meta {
+  name: find one
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5001/users/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name" : "Hotel Maharaja"
+  }
+}
